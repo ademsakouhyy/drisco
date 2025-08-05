@@ -1,0 +1,298 @@
+/* CoreBusiness.css */
+.core-business-main {
+  flex-grow: 1;
+  background-color: #fff;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.core-business-hero {
+  background: linear-gradient(135deg, #222 0%, #000 100%);
+  color: white;
+  padding: 100px 50px 60px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.core-business-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.core-business-hero .subtitle {
+  font-size: 1.2rem;
+  color: #f0a500;
+  font-weight: 500;
+}
+
+.cards-container-wrapper {
+  position: relative;
+  padding: 0 70px 60px;
+}
+
+.cards-container {
+  display: flex;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  scroll-padding: 0 70px;
+}
+
+.cards-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.cards-container::-webkit-scrollbar-thumb {
+  background: #f0a500;
+  border-radius: 10px;
+}
+
+.slide {
+  display: flex;
+  gap: 30px;
+  scroll-snap-align: start;
+  flex: 0 0 calc(100% - 140px);
+}
+
+.business-card {
+  flex: 1;
+  min-width: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  border-top: 5px solid #f0a500;
+  position: relative;
+  transform-origin: center center;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(240, 165, 0, 0.1) 0%, rgba(240, 165, 0, 0.7) 100%);
+}
+
+.card-image h2 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  flex-grow: 1;
+}
+
+.card-content li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.bullet {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f0a500;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.slider-nav button {
+  background: #f0a500;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.slider-nav button:hover {
+  background: #d18e00;
+  transform: scale(1.1);
+}
+
+.slider-nav button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .slide {
+    flex: 0 0 100%;
+  }
+  
+  .business-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .core-business-main {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .core-business-hero {
+    padding: 80px 20px 40px;
+  }
+  
+  .core-business-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .cards-container-wrapper {
+    padding: 0 30px 40px;
+  }
+  
+  .slide {
+    flex: 0 0 100%;
+  }
+  
+  .business-card {
+    flex: 0 0 100%;
+  }
+}
+/* Add this to your existing CoreBusiness.css */
+.core-business-hero {
+  background: #000; /* Same as navbar background */
+  color: white;
+  padding: 100px 50px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.core-business-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  z-index: 1;
+}
+
+.core-business-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #f0a500; /* Orange accent to match navbar */
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.core-business-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.core-business-hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #f0a500; /* Orange underline */
+  
+}
+
+.core-business-hero .subtitle {
+  font-size: 1.2rem;
+  color: #f0a500; /* Orange text to match theme */
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-left: 60px;
+}
+
+
+/* Remove or comment out these classes to remove the orange circles */
+.hero-decoration,
+.hero-decoration-1,
+.hero-decoration-2 {
+  display: none !important;
+}

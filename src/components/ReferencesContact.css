@@ -1,0 +1,264 @@
+/* ReferencesContact.css */
+.references-main-content {
+  flex-grow: 1;
+  padding: 0;
+  background-color: #fff;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+.references-hero {
+  background-color: #000000;
+  color: white;
+  padding: 100px 50px;
+  height: 350px ;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.references-hero.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.references-hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.references-hero-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  
+  border-radius: 50%;
+  margin-top: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+ 
+  transform: scale(0.95);
+  transition: opacity 1s 0.3s, transform 1s 0.3s;
+}
+
+.references-hero.fade-in .references-hero-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.references-content {
+  padding: 60px 50px;
+  background-color: #fff;
+}
+
+.references-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.references-section,
+.contact-section {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.references-section.fade-in,
+.contact-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #f0a500;
+  font-size: 32px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #f0a500;
+}
+
+.section-description {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.client-card {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.client-card h3 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #666;
+}
+
+.contact-email {
+  color: #4f46e5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-all;
+}
+
+.contact-email:hover {
+  color: #f0a500;
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f0a500;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.submit-button {
+  grid-column: span 2;
+  padding: 15px 30px;
+  background-color: #f0a500;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  justify-self: center;
+  width: 200px;
+}
+
+.submit-button:hover {
+  background-color: #e09500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .references-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .references-hero {
+    padding: 60px 20px;
+  }
+  
+  .references-hero h1 {
+    font-size: 36px;
+  }
+  
+  .references-content {
+    padding: 40px 20px;
+  }
+  
+  .client-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .references-hero {
+    padding: 50px 15px;
+  }
+  
+  .references-hero h1 {
+    font-size: 30px;
+  }
+  
+  .client-card {
+    padding: 20px;
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+}

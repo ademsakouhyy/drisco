@@ -1,0 +1,188 @@
+.main-content {
+  flex-grow: 1;
+  padding: 50px;
+  background-color: #fff;
+  margin-left: 250px; /* To account for fixed navbar */
+  width: calc(100% - 250px);
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  margin-bottom: 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-width: 800px;
+  color: white;
+}
+
+.main-title {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 100px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.cta-button {
+  background-color: #f0a500;
+  color: #000;
+  border: none;
+  border-radius: 10px 10px 10px 0px;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cta-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.abt-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 10px 10px 10px 0px;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.abt-button:hover {
+  background-color: #f0a500;
+  color: #ffffff;
+  border-color: #f0a500;
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  gap: 30px;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid #eee;
+}
+
+.feature-card {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.feature-card h3 {
+  color: #f0a500;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .hero-section {
+    min-height: 320px;
+    border-radius: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-section::before {
+    border-radius: 0;
+  }
+
+  .hero-content {
+    padding: 18px 6px;
+    max-width: 98vw;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    max-width: 95vw;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .cta-button,
+  .abt-button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  .features-section {
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px;
+    padding-top: 20px;
+  }
+
+  .feature-card {
+    padding: 18px 10px;
+    border-radius: 8px;
+    min-width: 0;
+    text-align: center;
+  }
+}

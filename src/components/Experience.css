@@ -1,0 +1,244 @@
+/* Experience.css */
+.experience-main-content {
+  flex-grow: 1;
+  padding: 0;
+  background-color: #fff;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+.experience-hero {
+  background: #000;
+  color: #fff;
+  height: 350px;
+  padding: 100px 50px 60px 50px;
+  text-align: center;
+  position: relative;
+ 
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  overflow: hidden;
+}
+
+.experience-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #f0a500;
+  z-index: 1;
+}
+
+.experience-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 2px;
+}
+
+.experience-hero-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s 0.3s, transform 1s 0.3s;
+}
+
+.experience-hero.fade-in .experience-hero-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.experience-content {
+  padding: 60px 50px;
+  background-color: #fff;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.country-section {
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.country-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.country-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0a500;
+}
+
+.country-flag {
+  width: 40px;
+  height: 30px;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.country-name {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+}
+
+.client-section {
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.client-name {
+  font-size: 20px;
+  color: #f0a500;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.client-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #f0a500;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.project-table th {
+  background-color: #333;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.project-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+.project-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.project-table tr:hover {
+  background-color: #e9e9e9;
+}
+
+.project-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .experience-main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .experience-hero {
+    height: 220px;
+    padding: 40px 10px 20px 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .experience-hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .experience-content {
+    padding: 40px 20px;
+  }
+  
+  .client-section {
+    padding: 20px 15px;
+  }
+  
+  .project-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .country-name {
+    font-size: 24px;
+  }
+  
+  .client-name {
+    font-size: 18px;
+  }
+  
+  .project-table th,
+  .project-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-hero {
+    padding: 50px 15px;
+  }
+  
+  .experience-hero h1 {
+    font-size: 30px;
+  }
+  
+  .country-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .country-flag {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+  
+  .project-table th,
+  .project-table td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+}

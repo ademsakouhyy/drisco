@@ -1,0 +1,231 @@
+.about-main-content {
+  flex-grow: 1;
+  padding: 0;
+  background: #fff;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+  .about-main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Hero section */
+.about-hero {
+  background: linear-gradient(120deg, #000000 60%, #000000 100%);
+  color: #fff;
+  padding: 100px 50px 60px 50px;
+  text-align: center;
+  position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle at 70% 30%, #000000 70%, transparent 100%);
+  opacity: 0.85;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.about-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #f0a500;
+  z-index: 1;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+}
+
+.about-hero .subtitle {
+  color: #f0a500;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+.about-hero-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  border: 6px solid #fff;
+  opacity: 0.97;
+  transition: opacity 1s 0.3s, transform 1s 0.3s;
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 60px 10px 30px 10px;
+    min-height: 200px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+  .about-hero h1 {
+    font-size: 1.5rem;
+  }
+  .about-hero-img {
+    width: 110px;
+    height: 110px;
+    margin-top: 18px;
+  }
+}
+
+/* About content sections */
+.about-content {
+  padding: 60px 50px 0 50px;
+  background: #fff;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 70px;
+  background: linear-gradient(100deg, #fff 70%, #f0a50018 100%);
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  padding: 32px 24px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.about-section.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.about-section:nth-child(even) {
+  flex-direction: row-reverse;
+  background: linear-gradient(-100deg, #fff 70%, #f0a50018 100%);
+}
+
+.about-img-wrap {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  opacity: 0.92;
+  transition: transform 0.5s, box-shadow 0.5s;
+  border: 4px solid #f0a50033;
+  background: #fff;
+}
+
+.about-img:hover {
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 8px 32px rgba(240, 165, 0, 0.18);
+}
+
+.about-section h2 {
+  color: #f0a500;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  height: 3px;
+  background-color: #f0a500;
+  border-radius: 2px;
+}
+
+.about-section p {
+  color: #333;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .about-content {
+    padding: 30px 5vw 0 5vw;
+  }
+  .about-section {
+    flex-direction: column !important;
+    gap: 18px;
+    text-align: center;
+    padding: 22px 10px;
+  }
+  .about-img-wrap {
+    margin-bottom: 10px;
+  }
+  .about-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Fade-in effect for scroll */
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Orange accent to match navbar */
+.hero-section::after,
+.about-hero::after,
+.core-business-hero::after,
+.vision-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #f0a500;
+  z-index: 1;
+}
